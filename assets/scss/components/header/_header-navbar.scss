@@ -23,5 +23,11 @@
     padding: $gap $gap-sm;
     font-size: 1.125rem;
     letter-spacing: 0.089em;
+    transition: color 0.25s;
+
+    &:hover,
+    &:focus {
+      color: $color-accent;
+    }
   }
 }
