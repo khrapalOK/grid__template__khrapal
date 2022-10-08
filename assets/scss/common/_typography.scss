@@ -9,19 +9,22 @@
 
 html {
   overflow-y: scroll;
+
   font-family: $font-main;
   font-size: $font-size;
 }
 
 a {
   text-decoration: none;
+
   color: $color-light;
 }
 
 h1 {
+  letter-spacing: 0.08em;
+
   font-family: $font-header;
   font-size: 3.75rem;
-  letter-spacing: 0.08em;
   font-weight: 300;
   line-height: 1.2em;
 }

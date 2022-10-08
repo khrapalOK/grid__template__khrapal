@@ -11,12 +11,14 @@
 
   &__title {
     margin: 0 0 53px;
+
     text-align: center;
   }
 
   &__actions {
     display: flex;
     justify-content: center;
+
     gap: $gap;
   }
 }
