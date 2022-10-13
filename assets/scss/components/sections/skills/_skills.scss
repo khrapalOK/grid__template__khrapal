@@ -4,47 +4,64 @@
 $local-gap: math.div(40px, 3);
 
 .skills {
-  padding: $gap-sm;
+  @include lg-min {
+    padding: $gap-sm;
+  }
+  @include lg {
+    padding: $gap-sm;
+  }
+
+  @include md {
+    padding: $gap-sm;
+  }
+
+  @include sm {
+    padding: $gap;
+  }
 
   &__container {
     display: grid;
-
     margin-bottom: $gap;
 
-    gap: $gap-sm;
-    grid-auto-rows: calc(33.33333vh - #{$local-gap});
-    grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
-    grid-template-columns: repeat(4, 1fr);
+    @include lg-min {
+      grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+      grid-template-columns: repeat(4, 1fr);
+      gap: $gap-sm;
+    }
 
-    @media (max-width: 992px) {
-      margin-bottom: 20px;
-
+    @include lg-md {
       grid-template-areas: "a1 a1 a2" "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
       grid-template-columns: repeat(3, 1fr);
+      gap: $gap-sm;
     }
-    @media (max-width: 768px) {
-      margin-bottom: 20px;
-
+    @include md-sm {
       grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
       grid-template-columns: repeat(2, 1fr);
+      gap: $gap-sm;
     }
 
-    @media (max-width: 576px) {
-      margin-bottom: 20px;
-
+    @include sm {
       grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
       grid-template-columns: 1fr;
+      gap: $gap;
     }
 
-    @media (max-height: 600px) {
-      grid-auto-rows: calc(200px - 13.333333333333333px);
+    @media (min-height: 691px) {
+      grid-auto-rows: calc(33.33333vh - #{$local-gap});
+    }
+
+    @media (max-height: 690px) {
+      grid-auto-rows: calc(230px - #{$local-gap});
     }
   }
 
   &__actions {
     display: flex;
     justify-content: center;
-
     margin-bottom: $gap-lg;
+
+    @include sm {
+      margin-bottom: $gap;
+    }
   }
 }
