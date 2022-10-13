@@ -120,6 +120,12 @@
     }
   }
 
+  &__item {
+    @include md {
+      margin: 20px 10px;
+    }
+  }
+
   &__link {
     display: block;
 
