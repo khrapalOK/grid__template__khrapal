@@ -111,16 +111,13 @@
     @include md {
       display: none;
       @include unlist;
-    }
 
-    &.active {
-      display: block;
-      background-color: red;
+      position: absolute;
+      top: 100%;
+      right: $gap;
+      background-color: rgba($color-gray-dark, 0.8);
+      @include box-shadow;
     }
-  }
-
-  &__item {
-    margin: $gap $gap-sm;
   }
 
   &__link {
