@@ -3,4 +3,49 @@
 
 .about {
   background-color: #e5e5e5;
+  padding: 100px 0 100px;
+  letter-spacing: 0.055em;
+
+  &__container {
+    @extend %container;
+    display: grid;
+    grid-template-columns: 1fr 271px;
+    gap: 100px;
+  }
+
+  &__content {
+    @include lg-min {
+      p:first-of-type::after {
+        right: -50px;
+      }
+    }
+
+    p:first-of-type {
+      margin-top: -5px;
+      position: relative;
+    }
+
+    p:first-of-type::after {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 200px;
+      content: "";
+      background-color: rgba(99, 117, 136, 0.1);
+    }
+
+    p:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    &img {
+      max-width: 100%;
+      max-height: 480px;
+    }
+  }
 }

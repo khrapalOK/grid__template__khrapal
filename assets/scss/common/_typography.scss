@@ -8,8 +8,6 @@
 }
 
 html {
-  overflow-y: scroll;
-
   font-family: $font-main;
   font-size: $font-size;
 }
@@ -40,6 +38,21 @@ h1 {
   }
 }
 h2 {
+  font-size: 40px;
   font-family: $font-header;
+  letter-spacing: 0.1em;
+  line-height: 1.2em;
+  color: #2d3651;
+  font-weight: 700;
   margin: 0;
+  margin-bottom: 48px;
+}
+
+p {
+  display: block;
+  font-size: 18px;
+  line-height: 1.15;
+  color: #637588;
+  font-weight: 400;
+  font-family: $font-main;
 }
