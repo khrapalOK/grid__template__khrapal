@@ -1,15 +1,37 @@
 @use "../../presets/" as *;
 @use "../../mixins/" as *;
 
+.form-item:nth-of-type(1) {
+}
+.form-item:nth-of-type(2) {
+}
+
+.form-item:nth-of-type(3) {
+}
+
 .form {
   padding: 30px 0;
   background-color: #2d3651;
+  margin-bottom: 100px;
 
   &__container {
     @extend %container;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
     gap: $gap;
+
+    @include md-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -25,5 +47,22 @@
       font-size: 1.125rem;
       color: $color-light;
     }
+
+    &--grid {
+      @include md {
+        grid-column: 1 / span 2;
+      }
+    }
+    @include md-sm {
+      .form-item:nth-of-type(1) {
+        grid-column: 1 / span 2;
+      }
+    }
   }
+}
+
+.abc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

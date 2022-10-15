@@ -6,17 +6,66 @@
   padding: 100px 0 100px;
   letter-spacing: 0.055em;
 
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @include sm {
+    text-align: center;
+  }
+
   &__container {
     @extend %container;
     display: grid;
-    grid-template-columns: 1fr 271px;
-    gap: 100px;
+    @include lg-min {
+      grid-template-columns: 1fr 271px;
+      gap: 100px;
+    }
+
+    @include lg-md {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
+    }
+
+    @include md-sm {
+      grid-template-columns: 1fr 236px;
+      gap: $gap;
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+      gap: $gap;
+    }
   }
 
   &__content {
     @include lg-min {
       p:first-of-type::after {
         right: -50px;
+      }
+    }
+
+    @include lg-md {
+      p:first-of-type::after {
+        right: -20px;
+      }
+    }
+
+    @include md-sm {
+      p:first-of-type::after {
+        right: -10px;
+      }
+    }
+
+    @include sm {
+      p:first-of-type::after {
+        display: none;
       }
     }
 
@@ -43,9 +92,5 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    &img {
-      max-width: 100%;
-      max-height: 480px;
-    }
   }
 }

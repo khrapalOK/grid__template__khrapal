@@ -38,19 +38,29 @@ h1 {
   }
 }
 h2 {
-  font-size: 40px;
-  font-family: $font-header;
   letter-spacing: 0.1em;
   line-height: 1.2em;
   color: #2d3651;
   font-weight: 700;
   margin: 0;
   margin-bottom: 48px;
+  @include lg-min {
+    font-size: 40px;
+    font-family: $font-header;
+  }
+  @include lg-md {
+    font-size: 32px;
+    margin-bottom: 38px;
+  }
+
+  @include md {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
 }
 
 p {
   display: block;
-  font-size: 18px;
   line-height: 1.15;
   color: #637588;
   font-weight: 400;
