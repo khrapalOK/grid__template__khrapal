@@ -127,11 +127,11 @@
       transition: 0.3s;
     }
 
-    &:hover &--name {
+    &:hover h3 {
       color: #2d3651;
       transition: 0.3s;
     }
-    &:hover &--paragraph {
+    &:hover p {
       color: #2d3651;
       transition: 0.3s;
     }
@@ -141,19 +141,6 @@
       justify-content: center;
       background-color: #2d3651;
       overflow: hidden;
-    }
-
-    &--name {
-      text-align: center;
-      font-size: 18px;
-      letter-spacing: 0.05em;
-      color: #637588;
-      font-weight: 700;
-      font-family: $font-header;
-    }
-
-    &--paragraph {
-      text-align: center;
     }
 
     &__link {
@@ -167,6 +154,19 @@
       display: grid;
       align-content: center;
       padding: 20px;
+
+      &--name {
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 0.05em;
+        color: #637588;
+        font-weight: 700;
+        font-family: $font-header;
+      }
+
+      &--paragraph {
+        text-align: center;
+      }
     }
   }
 
