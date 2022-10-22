@@ -2,21 +2,21 @@
 @use "../../presets/" as *;
 
 .footer {
+  padding: 50px 20px 70px;
+  text-align: center;
   background-color: $color-primary;
-  height: 250px;
 
   &__container {
+    @extend %container;
     display: flex;
     align-items: center;
     flex-direction: column;
   }
 
-  &-link {
-  }
-
-  &__icon {
+  &__social {
     position: relative;
-    align-items: center;
+    // margin-bottom: 40px;
+
     &::after {
       position: absolute;
       bottom: -20px;
@@ -26,9 +26,21 @@
       content: "";
       background-color: rgba(255, 255, 255, 0.1);
     }
+
+    &-link {
+      position: relative;
+      align-items: center;
+    }
+  }
+
+  &__icon {
     &-size {
       height: 35px;
       width: 35px;
     }
+  }
+
+  &__signature {
+    padding-top: 40px;
   }
 }

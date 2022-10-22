@@ -2,9 +2,23 @@
 @use "../../mixins/" as *;
 
 .posts {
-  margin-bottom: 100px;
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include md-sm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   &__title {
-    margin-bottom: 69px;
+    margin-bottom: 48px;
     font-size: 40px;
     letter-spacing: 4px;
     line-height: 48px;
@@ -20,55 +34,124 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: $gap;
+    padding-bottom: 20px;
+
+    @include lg-min {
+      grid-template-areas:
+        "p1 p1 p2 p3"
+        "p4 p5 p6 p6";
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas:
+        "p1 p1 p2"
+        "p3 p4 p4"
+        "p5 p5 p6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-areas:
+        "p1 p2"
+        "p3 p4"
+        "p5 p6";
+
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include sm {
+      grid-template-areas:
+        "p1"
+        "p2"
+        "p3"
+        "p4"
+        "p5"
+        "p6";
+    }
   }
 
   &__item {
-    background-color: #eeeeee;
-    // padding-bottom: $gap;
-
-    &--grid1 {
-      grid-column: 1 / 3;
+    background-color: #eeeeeebd;
+    &:nth-of-type(1) {
+      grid-area: p1;
     }
-    &--grid2 {
-      grid-column: 3;
+    &:nth-of-type(2) {
+      grid-area: p2;
     }
-    &--grid3 {
-      grid-column: 4;
+    &:nth-of-type(3) {
+      grid-area: p3;
     }
-    &--grid4 {
-      grid-column: 1;
+    &:nth-of-type(4) {
+      grid-area: p4;
     }
-    &--grid5 {
-      grid-column: 2;
+    &:nth-of-type(5) {
+      grid-area: p5;
     }
-    &--grid6 {
-      grid-column: 3 / 5;
+    &:nth-of-type(6) {
+      grid-area: p6;
     }
 
-    &--image {
-      object-fit: cover;
-      object-position: center;
+    &:hover .image {
+      scale: 1.1;
+      transition: 0.7s;
+    }
+
+    &:hover {
+      background-color: #eeeeee;
+      transition: 0.3s;
+    }
+
+    &:hover &--name {
+      color: #2d3651;
+      transition: 0.3s;
+    }
+    &:hover &--paragraph {
+      color: #2d3651;
+      transition: 0.3s;
+    }
+    &__image {
       width: 100%;
-      margin-bottom: 69px;
+      display: flex;
+      justify-content: center;
+      background-color: #2d3651;
+      overflow: hidden;
     }
 
     &--name {
       text-align: center;
       font-size: 18px;
-      letter-spacing: 1px;
-      line-height: 20px;
+      letter-spacing: 0.05em;
       color: #637588;
       font-weight: 700;
       font-family: $font-header;
-      padding: 0 $gap;
     }
 
     &--paragraph {
       text-align: center;
-      padding-bottom: $gap;
-      padding: 0 $gap;
+    }
+
+    &__link {
+      display: grid;
+      overflow: hidden;
+      height: 100%;
+      grid-template-rows: 300px 1fr;
+    }
+
+    &__text {
+      display: grid;
+      align-content: center;
+      padding: 20px;
     }
   }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
 }
