@@ -42,7 +42,8 @@
       outline: none;
 
       &::placeholder {
-        color: #ffffff31;
+        color: #637588;
+        font-weight: 400;
       }
 
       &:hover {
@@ -50,7 +51,7 @@
         border-bottom-color: $color-light;
         background-color: rgba(255, 255, 255, 0.15);
         &::placeholder {
-          color: #ffffff57;
+          color: #e5e5e55b;
         }
       }
 
