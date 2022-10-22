@@ -70,7 +70,11 @@
 
 .fa-brands {
   font-size: 36px;
-  padding: 0 8px;
+
+  &:hover {
+    color: $color-accent;
+    transition: 0.5s;
+  }
 }
 
 .img {
