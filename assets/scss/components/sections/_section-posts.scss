@@ -155,7 +155,7 @@
       align-content: center;
       padding: 20px;
 
-      &--name {
+      h3 {
         text-align: center;
         font-size: 18px;
         letter-spacing: 0.05em;
@@ -163,8 +163,7 @@
         font-weight: 700;
         font-family: $font-header;
       }
-
-      &--paragraph {
+      p {
         text-align: center;
       }
     }

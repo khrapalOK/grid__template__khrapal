@@ -891,7 +891,7 @@ p {
 
   padding: 20px;
 }
-.posts-item__text--name {
+.posts-item__text h3 {
   text-align: center;
   letter-spacing: 0.05em;
 
@@ -901,7 +901,7 @@ p {
   font-size: 18px;
   font-weight: 700;
 }
-.posts-item__text--paragraph {
+.posts-item__text p {
   text-align: center;
 }
 .posts__actions {
